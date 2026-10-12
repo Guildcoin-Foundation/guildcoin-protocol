@@ -4,7 +4,7 @@ An indie game backend creates a server-side order for 12.50 GC and receives a
 confirmed opaque checkout URL. `sandbox-api.guildcoin.example` is a reserved
 example hostname; these requests cannot be executed as written.
 
-~~~http
+```http
 POST /v1/checkouts HTTP/1.1
 Host: sandbox-api.guildcoin.example
 Authorization: Bearer <SERVER_TOKEN>
@@ -19,9 +19,9 @@ Content-Type: application/json
   "return_url": "https://game.example/checkout/return",
   "cancel_url": "https://game.example/checkout/cancel"
 }
-~~~
+```
 
-~~~json
+```json
 {
   "id": "chk_79b2c8e3",
   "merchant_order_id": "order-9df283",
@@ -33,7 +33,7 @@ Content-Type: application/json
   "expires_at": "2026-10-10T09:15:00Z",
   "transaction_id": null
 }
-~~~
+```
 
 Game client redirects to `checkout_url`. **Returning from the redirect never
 means the purchase has completed**. The wallet handles player authentication,
